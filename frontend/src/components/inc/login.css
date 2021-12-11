@@ -1,0 +1,13 @@
+form{
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0,0,0,1);
+}
+
+#headerL{
+    margin-right: 150px;
+}
+
+#logoutbutton{
+
+    margin-left: 40px;
+}

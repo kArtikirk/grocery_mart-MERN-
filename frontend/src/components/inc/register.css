@@ -1,0 +1,21 @@
+form{
+    background-color: white;
+    box-shadow: 5px 5px 5px rgba(0,0,0,1);
+}
+
+#headerR{
+    margin-right: 100px;
+}
+
+.divc{
+    margin-top: 50px;
+    font-size: xx-large;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    text-size-adjust: auto;
+}
+ p{
+    margin-top: 50px;
+    font-size: large;
+    text-align: center;
+}
