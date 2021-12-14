@@ -1,18 +1,20 @@
 const { addListener } = require("../app");
 const Product= require("../models/productModel")
-
+const ApiFeatures = require("../utils/apifeatures");
 
 
 
 
 //create product-- Admin
 exports.createProduct = async (req,res,next)=>{
-    
-    const product = await Product.create(req.body);
+    // const resultPerPage= 10;
+    // const productsCount= await Product.countDocuments() // line 17-productsCount
+    const products = await Product.create(req.body);
 
     res.status(201).json({
         success:true,
-        product
+        products,
+        
     })
     
 }
@@ -21,8 +23,8 @@ exports.createProduct = async (req,res,next)=>{
 
 //get all products
 exports.getAllProducts= async(req,res)=>{
-
-    const products = await Product.find();
+const ApiFeature= new ApiFeatures(Product.find(),req.query).search().filter();
+    const products = await ApiFeature.query;
     res.status(200).json({
         success:true,
         products

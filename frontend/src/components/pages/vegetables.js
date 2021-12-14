@@ -20,7 +20,9 @@ export function Vegetables() {
                                 <h5 className="card-title">Vegetables</h5>
                                     <img src={Tomatoes} class="card-img-top" alt="Tomatoes img"  />
                                 <p className="card-text">Tomatoes</p>
-                                <a href="" class="btn btn-primary">Add to cart<Link to='/cart'class="nav-link active">Shopping Cart</Link></a>
+                                 <Link to='/cart'class="nav-link active">
+                                <a href="" class="btn btn-primary">Add to cart</a>
+                                </Link>
                             </div>
                         </div>
                         
@@ -33,7 +35,9 @@ export function Vegetables() {
                                 <h5 className="card-title">Vegetables</h5>
                                     <img src={Cucumber} class="card-img-top" alt="Cucumber img"  />
                                 <p className="card-text">Cucumber</p>
-                                <a href="" class="btn btn-primary">Add to cart<Link to='/cart'class="nav-link active">Shopping Cart</Link></a>
+                                 <Link to='/cart'class="nav-link active">
+                                <a href="" class="btn btn-primary">Add to cart</a>
+                                </Link>
                             </div>
                         </div>
                         
@@ -46,7 +50,9 @@ export function Vegetables() {
                                 <h5 className="card-title">Vegetables</h5>
                                     <img src={Garlic} class="card-img-top" alt="Garlic img"  />
                                 <p className="card-text">Garlic</p>
-                                <a href="" class="btn btn-primary">Add to cart<Link to='/cart'class="nav-link active">Shopping Cart</Link></a>
+                                 <Link to='/cart'class="nav-link active">
+                                <a href="" class="btn btn-primary">Add to cart</a>
+                                </Link>
                             </div>
                         </div>
                         
@@ -59,7 +65,9 @@ export function Vegetables() {
                                 <h5 className="card-title">Vegetables</h5>
                                 <img src={Capsicum} class="card-img-top" alt="Capsicum img"  />
                                 <p className="card-text">Capsicum</p>
-                                <a href="" class="btn btn-primary">Add to cart<Link to='/cart'class="nav-link active">Shopping Cart</Link></a>
+                                 <Link to='/cart'class="nav-link active">
+                                <a href="" class="btn btn-primary">Add to cart</a>
+                                </Link>
                             </div>
                         </div>
                         

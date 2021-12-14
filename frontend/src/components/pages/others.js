@@ -18,9 +18,9 @@ export function Others() {
                                 <h5 className="card-title">Others</h5>
                                 <img id="image" src={Olive_oil} class="card-img-top" alt="Olive oil img"   />
                                 <p className="card-text">Olive oil</p>
-                                <a href="" class="btn btn-primary">Add to cart
-                                    <Link to='/cart'class="nav-link active">Shopping Cart</Link>
-                                </a>
+                                <Link to='/cart'class="nav-link active">
+                                <a href="" class="btn btn-primary">Add to cart</a>
+                                </Link>
                             </div>
                         </div>
                         
@@ -33,9 +33,9 @@ export function Others() {
                                 <h5 className="card-title">Others</h5>
                                 <img id="image" src={Rice} class="card-img-top" alt="Rice img"   />
                                 <p className="card-text">Rice</p>
-                                <a href="" class="btn btn-primary">Add to cart
-                                <Link to='/cart'class="nav-link active">Shopping Cart</Link>
-                                </a>
+                                <Link to='/cart'class="nav-link active">
+                                <a href="" class="btn btn-primary">Add to cart</a>
+                                </Link>
                             </div>
                         </div>
                         
@@ -48,9 +48,11 @@ export function Others() {
                                 <h5 className="card-title">Others</h5>
                                     <img id="image" src={Wheat} class="card-img-top" alt="Wheat img"   />
                                 <p className="card-text">Wheat</p>
-                                <a href="" class="btn btn-primary">Add to cart
-                                    <Link to='/cart'class="nav-link active">Shopping Cart</Link>
-                                </a>
+                                
+                                    <Link to='/cart'class="nav-link active">
+                                        <a href="" class="btn btn-primary">Add to cart</a>
+                                    </Link>
+                                
                             </div>
                         </div>
                         
@@ -63,9 +65,11 @@ export function Others() {
                                 <h5 className="card-title">Others</h5>
                                 <img id="image" src={Salt} class="card-img-top" alt="Salt img"    />
                                 <p className="card-text">Salt</p>
-                                <a href="" class="btn btn-primary">Add to cart
-                                    <Link to='/cart'class="nav-link active">Shopping Cart</Link>
-                                </a>
+                                
+                                    <Link to='/cart'class="nav-link active"><
+                                        a href="" class="btn btn-primary">Add to cart</a>
+                                    </Link>
+                                
                             </div>
                         </div>
                         

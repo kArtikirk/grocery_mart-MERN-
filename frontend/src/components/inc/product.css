@@ -1,26 +1,13 @@
-/* .row{
-
-    text-align: center;
-    }
-
-div.card-body{
-    align-content: center;
-}
-
-.col-sm-6{
-    align-items: auto;
-    display: flex;  
-}
-#sidebar{
-    align-content: left;
-    display: flex;
-    place-content:left;
-} 
-.card-style{
-
-    height: auto;
+.container{
     width: auto;
-}*/
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+
+
 .row-col-sm-6{
 
     text-align: center;
@@ -32,29 +19,27 @@ div.card-body{
 }
 
 #Products{
-    align-items: center;
+    align-items: center; 
     display: flex;
-    width: auto;
-    height: auto;
+    
     /* display: inline-flex; */
     /* margin-left: 200px; */
-    margin-left: 20px;
-    margin-right: 20px;
+    /* margin-left: 20px; */
+    /* margin-right: 20px;
     margin-bottom: 40px;
-    justify-content: space-between;
-    /* border: violet 2px solid; */
+    /* justify-content: space-between; */
+    /* border: rgb(19, 1, 19) 2px solid;
 
 }
-
-.img{
-    margin-bottom: 40px;
-    margin-top: 20px;
-}
-#sidebar{
-    align-content: left;
-    display: flex;
-    place-content:left;
-}
-h1{
+.card-text1{
     text-align: center;
+    color: brown;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    
+}
+
+.btn-styling{
+    align-self: center;
+    /* margin-left: 4rem; */
 }

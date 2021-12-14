@@ -17,3 +17,23 @@
     background-color: black;
 
   } */
+  .modal-title-styling{
+    color:rgb(40, 66, 2);
+    text-align: center;
+    font-size: large;
+    padding-top: 0.2rem;
+  }
+  
+  .modal-body{
+    background-image: url(../images/modal-background-img.png);
+  }
+  
+  .modal-tytle-box{
+    border: solid brown;
+   
+    width: 9rem;
+    margin-left: 9rem;
+    background-color: burlywood;
+    border-radius: 2rem;
+    
+  }
