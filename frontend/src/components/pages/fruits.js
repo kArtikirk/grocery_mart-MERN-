@@ -1,142 +1,29 @@
 import React from "react";
-import Apples from "../images/Apples.jpg" 
-import Mangoes from "../images/Mangoes.jpg"
-import Bananas from "../images/Bananas.jpg"
-import Strawberries from "../images/Strawberries.jpg"
-import "../inc/product.css";
-import{Link} from "react-router-dom"
+import { Link } from "react-router-dom";
+import "../inc/product.css"
 
-export function Fruits() {
-    return (
-        <div>
-            <h1>Fruits</h1>
-            <div id='Products'className="col-sm-6" >
-                <div className="row-col-sm-6">
+
+const FruitsN = ({product})=>{
+    return(
+        <div className='d-flex' to={product.id}>
+            <div id="Products">
+                <div className="row-col-sm-6 d-flex flex-wrap">
                     <div className="col-sm-6">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Fruits</h5>
-                                <img id="image" src={Apples} class="card-img-top" alt="Apples img"   />
-                                <p className="card-text">Apples</p>
-                                <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
+                            <img class="card-img-top" height="250px" width="250px" src={product.images[0].url} alt={product.name} />
+                                <p className="card-text1">{product.name}</p>
+                                <p className="card-text1">{product.price} /-</p>
+
+                                <Link to='/cart' class="nav-link active btn-styling" >
+                                    <a href="/" class="btn btn-primary">Add to Cart</a>
                                 </Link>
                             </div>
                         </div>
-                        
-                    </div>    
+                    </div>
                 </div>
-                <div className="row-col-sm-6">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Fruits</h5>
-                                <img id="image" src={Mangoes} class="card-img-top" alt="Apples img"   />
-                                <p className="card-text">Mangoes</p>
-                                <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
-                                </Link>
-                            </div>
-                        </div>
-                        
-                    </div>    
-                </div>
-                <div className="row-col-sm-6">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Fruits</h5>
-                                    <img id="image" src={Bananas} class="card-img-top" alt="Apples img"   />
-                                <p className="card-text">Bananas</p>
-                                <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
-                                </Link>
-                            </div>
-                        </div>
-                        
-                    </div>    
-                </div>
-                <div className="row-col-sm-6">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Fruits</h5>
-                                <img id="image" src={Strawberries} class="card-img-top" alt="Apples img"    />
-                                <p className="card-text">Strawberries</p>
-                                <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
-                                </Link>
-                            </div>
-                        </div>
-                        
-                    </div>    
-                </div>
+            </div>
         </div>
-    </div>
-    );
-  }
-
-
-
-
-
-
-// export class Products extends React.Component{
-//     render(){
-    //     return <div id='Products'className="col-sm-6">
-            
-    //             <div className="row-col-sm-6">
-    //                 <div className="col-sm-6">
-    //                     <div className="card">
-    //                         <div className="card-body">
-    //                             <h5 className="card-title">Fruits</h5>
-    //                                 <img src={Apples} alt="Apples img" height= "150px" width="150px" position="auto"/>
-    //                             <p className="card-text">Apples</p>
-    //                             <a href="" class="btn btn-primary">Add to cart</a>
-    //                         </div>
-    //                     </div>
-                        
-    //                 </div>    
-    //             </div>
-    //             <div className="row-col-sm-6">
-    //                 <div className="col-sm-6">
-    //                     <div className="card">
-    //                         <div className="card-body">
-    //                             <h5 className="card-title">Fruits</h5>
-    //                                 <img src={Mangoes} alt="Mangoes img" height= "150px" />
-    //                             <p className="card-text">Mangoes</p>
-    //                             <a href="" class="btn btn-primary">Add +</a>
-    //                         </div>
-    //                     </div>
-                        
-    //                 </div>    
-    //             </div>
-    //             <div className="row-col-sm-6">
-    //                 <div className="col-sm-6">
-    //                     <div className="card">
-    //                         <div className="card-body">
-    //                             <h5 className="card-title">Fruits</h5>
-    //                                 <img src={Bananas} alt="Bananas img" height= "150px" />
-    //                             <p className="card-text">Bananas</p>
-    //                             <a href="" class="btn btn-primary">Add +</a>
-    //                         </div>
-    //                     </div>
-                        
-    //                 </div>    
-    //             </div>
-    //             <div className="row-col-sm-6">
-    //                 <div className="col-sm-6">
-    //                     <div className="card">
-    //                         <div className="card-body">
-    //                             <h5 className="card-title">Fruits</h5>
-    //                             <img src={Strawberries} alt="Strawberries img" height= "150px" />
-    //                             <p className="card-text">Strawberries</p>
-    //                             <a href="" class="btn btn-primary">Add +</a>
-    //                         </div>
-    //                     </div>
-                        
-    //                 </div>    
-    //             </div>
-    //     </div>
-    // }
-// }
+    )
+};
+export default FruitsN;

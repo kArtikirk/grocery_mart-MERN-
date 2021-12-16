@@ -1,24 +1,26 @@
-import React, { Fragment, useState } from "react";
-import { Link } from "react-router-dom";
+import React, { Fragment, useState } from "react"
+import { useNavigate } from "react-router-dom";
 
-const Search = ({history}) => {
 
+const Search = () => {
+    const navigate = useNavigate();
     const [keyword, setKeyword] = useState("")
     const searchSubmitHandler = (e) => {
         e.preventDefault();
         if (keyword.trim()) {
-            history.pushState(`/products/${keyword}`)
+           
+            navigate(`/products/${keyword}`)
         } else {
-            history.pushState("/products")
+            navigate("/products")
         }
-
     };
     return (<Fragment>
          
-            <form class="d-flex">
+            <form class="d-flex"onSubmit={searchSubmitHandler}>
         
-                    <input class="form-control me-2" onSubmit={searchSubmitHandler} type="search" placeholder="Search" aria-label="Search" />
-                    <button class="btn btn-outline-success" onChange={(e) => setKeyword(e.target.value)}  type="submit">Search
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  onChange={(e) => setKeyword(e.target.value)}  />
+                   
+                    <button class="btn btn-outline-success"  type="submit">Search
             
                 </button> 
         </form>

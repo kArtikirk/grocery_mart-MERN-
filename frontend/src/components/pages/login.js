@@ -17,6 +17,7 @@ export function Login() {
         setLoading(true);
         try {
             await login(emailRef.current.value, passwordRef.current.value);
+            window.location.href="/"
         } catch {
             alert("Password or email is incorrect");
         }
@@ -40,11 +41,13 @@ export function Login() {
 
         return (
 
-            <Container >
-                <h1 id="headerL" className="shadow-sm text-sucess mt-5 p-3 text-center rounded ">Login</h1>
+            <Container id="col" >
+                
                 <Row>
-                    <Col lg={5} md={6} sm={12} className="p-5 m-auto shadow-sm rounded lg">
-                        <Form className="rounded p-4 p-sm-3 " >
+                    <Col lg={5} md={6} sm={12} className="p-5 m-auto rounded lg">
+                        
+                        <Form id="Forml" className="rounded p-4 p-sm-3 " >
+                        <h1 id="headerL" >Login</h1>
                             <Form.Group className="mb3">
                                 <Form.Label>Email Address</Form.Label>
                                 <Form.Control type="email" placeholder="Enter your email"

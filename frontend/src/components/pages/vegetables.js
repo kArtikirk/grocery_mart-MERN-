@@ -1,79 +1,29 @@
 import React from "react";
-import Tomatoes from "../images/Tomatoes.jpg" 
-import Garlic from "../images/Garlic.jpg"
-import Cucumber from "../images/Cucumber.jpg"
-import Capsicum from "../images/Capsicum.jpg"
 import { Link } from "react-router-dom";
-import '../inc/product.css';
+
+import "../inc/product.css"
 
 
-
-export function Vegetables() {
-    return (
-        <div><h1>Vegetables</h1>
-            <div id='Products'className="col-sm-6">
-                    
-                <div className="row-col-sm-6">
+const VegetableN = ({product})=>{
+    return(
+        <div className='d-flex' to={product.id}>
+            <div id="Products">
+                <div className="row-col-sm-6 d-flex flex-wrap">
                     <div className="col-sm-6">
                         <div className="card">
                             <div className="card-body">
-                                <h5 className="card-title">Vegetables</h5>
-                                    <img src={Tomatoes} class="card-img-top" alt="Tomatoes img"  />
-                                <p className="card-text">Tomatoes</p>
-                                 <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
+                            <img class="card-img-top" height="250px" width="250px" src={product.images[0].url} alt={product.name} />
+                                <p className="card-text1">{product.name}</p>
+                                <p className="card-text1">{product.price} /-</p>
+                                <Link to='/cart' class="nav-link active btn-styling" >
+                                    <a class="btn btn-primary">Add to Cart</a>
                                 </Link>
                             </div>
                         </div>
-                        
-                    </div>    
+                    </div>
                 </div>
-                <div className="row-col-sm-6">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Vegetables</h5>
-                                    <img src={Cucumber} class="card-img-top" alt="Cucumber img"  />
-                                <p className="card-text">Cucumber</p>
-                                 <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
-                                </Link>
-                            </div>
-                        </div>
-                        
-                    </div>    
-                </div>
-                <div className="row-col-sm-6">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Vegetables</h5>
-                                    <img src={Garlic} class="card-img-top" alt="Garlic img"  />
-                                <p className="card-text">Garlic</p>
-                                 <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
-                                </Link>
-                            </div>
-                        </div>
-                        
-                    </div>    
-                </div>
-                <div className="row-col-sm-6">
-                    <div className="col-sm-6">
-                        <div className="card">
-                            <div className="card-body">
-                                <h5 className="card-title">Vegetables</h5>
-                                <img src={Capsicum} class="card-img-top" alt="Capsicum img"  />
-                                <p className="card-text">Capsicum</p>
-                                 <Link to='/cart'class="nav-link active">
-                                <a href="" class="btn btn-primary">Add to cart</a>
-                                </Link>
-                            </div>
-                        </div>
-                        
-                    </div>    
-                </div>
+            </div>
         </div>
-    </div>
-    );
-  }
+    )
+};
+export default VegetableN;

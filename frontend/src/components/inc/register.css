@@ -1,21 +1,15 @@
-form{
-    background-color: white;
-    box-shadow: 5px 5px 5px rgba(0,0,0,1);
+
+#Forml{
+    width: 500px ;
+    background-color: rgb(255, 255, 255);
+}
+
+#col{
+    align-items: center;
 }
 
 #headerR{
-    margin-right: 100px;
+   text-align: center;
+   margin-bottom: 20px;
 }
-
-.divc{
-    margin-top: 50px;
-    font-size: xx-large;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    text-size-adjust: auto;
-}
- p{
-    margin-top: 50px;
-    font-size: large;
-    text-align: center;
-}
+ 

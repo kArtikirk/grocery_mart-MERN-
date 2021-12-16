@@ -10,7 +10,7 @@ import { useParams } from "react-router";
     const dispatch = useDispatch();
 
     const {products} =useSelector((state)=>state.products);
-    const keyword= useParams();
+    const {keyword}= useParams()
 
     useEffect(() => {
         dispatch(getProduct(keyword));
@@ -21,12 +21,10 @@ import { useParams } from "react-router";
             <h1>All Products</h1>
             <div className="container" >
 
-                {products && products.map(product=>(
+                {products && products.map((product)=>
 
                     <Product product={product}/>
-                ))}
-                    
-                
+                )}
             </div>
         </Fragment>
     )

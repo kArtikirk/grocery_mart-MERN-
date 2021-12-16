@@ -8,18 +8,18 @@ import {
     CLEAR_ERRORS
 } from '../constants/productConstants'
 
-export const productReducer = (state = { products: [] }, action) => {
+export const productReducer = (state = { products: [] },action) => {
     switch (action.type) {
         case ALL_PRODUCT_REQUEST:
             return {
                 loading: true,
-                product: [],
+                product: []
             };
         case ALL_PRODUCT_SUCCESS:
             return {
                 loading: false,
-                products: action.payload.products,    //product count is remaining
-                productsCount:action.payload.productsCount,
+                products: action.payload.products    //product count is remaining
+                // productsCount:action.payload.productsCount,
 
             };
             case ALL_PRODUCT_FAIL:
