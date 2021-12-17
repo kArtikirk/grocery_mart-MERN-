@@ -1,6 +1,6 @@
 import React, { Fragment, useState } from "react"
 import { useNavigate } from "react-router-dom";
-
+import "../inc/search.css"
 
 const Search = () => {
     const navigate = useNavigate();

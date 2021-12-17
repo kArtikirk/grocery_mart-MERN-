@@ -10,23 +10,29 @@ import { Aboutus } from "./components/pages/aboutUs";
 import { Shoppingcart } from "./components/pages/shoppingCart";
 import { Other } from "./components/pages/oth";
 import { Login } from "./components/pages/login";
-import {BrowserRouter as Router, Route,Routes} from "react-router-dom";
+import {BrowserRouter as Router, Route,Routes,Navigate} from "react-router-dom";
 import { Register } from "./components/pages/Register";
 import  Allproduct  from "./components/pages/allproducts";
 import  Search  from "./components/pages/Search.js";
 import { Veg } from "./components/pages/veg";
+import { useAuth } from "./components/pages/firebase";
+import ProductDetails from "./components/pages/productDetails";
 //import { Header1 } from "./components/inc/Header";
 //<Navigator/><Header1/>
 
-
 function App() {
+
+  const currentUser= useAuth()
+
   return (
     <Router>
     
       <div >
         
       <Navigator/>
-        
+        <aside>
+              <Search />
+        </aside>
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/about" element={<Aboutus/>}/>
@@ -40,13 +46,15 @@ function App() {
           <Route path="/others" element={<Other/>}/>
           <Route path="/products" element={<Allproduct/>}/>
           <Route path="/products/:keyword" element={<Allproduct/>}/>
+          <Route exact path="/product/:id" element={<ProductDetails/>}/>
           <Route path="/search" element={<Search/>}/>
-          <Route path="/cart" element={<Shoppingcart/>}/>
-          
+          <Route path="/cart" element={currentUser ? <Shoppingcart/> : <Navigate to='/login'/>}/>
+         
         </Routes>
-
+          
       </div>
     </Router>
+  
   );
 }
 

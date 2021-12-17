@@ -23,7 +23,7 @@ import { useParams } from "react-router";
 
                 {products && products.map((product)=>
 
-                    <Product product={product}/>
+                    <Product key={product._id} product={product}/>
                 )}
             </div>
         </Fragment>
@@ -31,3 +31,4 @@ import { useParams } from "react-router";
 
 }
 export default Allproduct
+

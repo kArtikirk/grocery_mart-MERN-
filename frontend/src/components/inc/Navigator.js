@@ -5,8 +5,11 @@ import Search from "../pages/Search";
 import "../inc/Navigator.css"
 //import { Allproducts } from "../pages/allproducts";
 //import { ContactUs } from "../pages/ContactUs";
-
+import { Navigate } from "react-router";
+import { useAuth } from "../pages/firebase"; 
+import { Shoppingcart } from "../pages/shoppingCart";
 export function Navigator() {
+    const currentUser= useAuth()
     return (
         <div class="fluid">
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
@@ -74,7 +77,11 @@ export function Navigator() {
 
 
                         </ul>
-                        <Search />
+                      
+                        <aside>
+                            <Link to ="/cart" element={currentUser ? <Shoppingcart/> : <Navigate to='/login'/>}>Cart</Link>
+                        </aside>
+                        
 
                     </div>
                 </div>

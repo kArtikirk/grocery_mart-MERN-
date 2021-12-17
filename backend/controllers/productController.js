@@ -32,13 +32,13 @@ const ApiFeature= new ApiFeatures(Product.find(),req.query).search().filter();
 }
 
 // Get Product details
-exports.getProductDetails = async(req,res,next)=>{
+exports.getProductDetails = async(req,res)=>{
   
     const product= await Product.findById(req.params.id);
   
   
     if(!product){
-        return res.status(500).json({
+        return res.status(500).json({ 
             success: false,
             message:"Product not found"
         });

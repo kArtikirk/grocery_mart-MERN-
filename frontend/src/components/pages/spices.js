@@ -6,6 +6,7 @@ import "../inc/product.css"
 
 const SpicesN = ({product})=>{
     return(
+        <Link to={`/product/${product._id}`} class="nav-link active btn-styling">
         <div className='d-flex' to={product.id}>
             <div id="Products">
                 <div className="row-col-sm-6 d-flex flex-wrap">
@@ -16,15 +17,13 @@ const SpicesN = ({product})=>{
                                 <p className="card-text1">{product.name}</p>
                                 <p className="card-text1">{product.price} /-</p>
                                 
-                                <Link to='/cart' class="nav-link active btn-styling" >
-                                    <a href="" class="btn btn-primary">Add to Cart</a>
-                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        </Link>
     )
 };
 
