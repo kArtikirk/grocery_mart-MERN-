@@ -2,6 +2,10 @@ import {
     ALL_PRODUCT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
+    NEW_PRODUCT_REQUEST,
+    NEW_PRODUCT_SUCCESS,
+    NEW_PRODUCT_FAIL,
+    NEW_PRODUCT_RESET,
     PRODUCT_DETAILS_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
@@ -39,6 +43,44 @@ export const productReducer = (state = { products: [] },action) => {
     }
 };
 
+// --------------------to create new Products---------------------
+
+export const newProductReducer = (state = { product: {} }, action) => {
+  console.log("state", state)
+  switch (action.type) {
+    case NEW_PRODUCT_REQUEST:
+      return {
+        ...state,
+        loading: true,
+      };
+    case NEW_PRODUCT_SUCCESS:
+      return {
+        loading: false,
+        success: action.payload.success,
+        product: action.payload.product,
+      };
+     
+    case NEW_PRODUCT_FAIL:
+      return {
+        ...state,
+        loading: false,
+        error: action.payload,
+      };
+    case NEW_PRODUCT_RESET:
+      return {
+        ...state,
+        success: false,
+      };
+    case CLEAR_ERRORS:
+      return {
+        ...state,
+        error: null,
+      };
+    default:
+      return state;
+  }
+};
+
 
 
 // --------------for product details---------------------
@@ -74,3 +116,4 @@ export const productDetailsReducer = ((state = { product:{}}, action) => {
             return state;
     }
 });
+

@@ -17,26 +17,29 @@ import  Search  from "./components/pages/Search.js";
 import { Veg } from "./components/pages/veg";
 import { useAuth } from "./components/pages/firebase";
 import ProductDetails from "./components/pages/productDetails";
-//import { Header1 } from "./components/inc/Header";
+import  Dashboard  from "./components/admin/Dashboard";
+import Chatbot from "./components/Chatbot/chatbot";
 //<Navigator/><Header1/>
-
+import AddNewProduct from "./components/admin/newProduct"
 function App() {
 
   const currentUser= useAuth()
 
   return (
-    <Router>
+    <Router>  
     
       <div >
         
-      <Navigator/>
+        <Navigator/>
         <aside>
-              <Search />
+          
+          <li style={{color:"black"},{fontWeight:"bolder"}}> Welcome, { currentUser?.email.split('@')[0] }</li>
+          
         </aside>
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/about" element={<Aboutus/>}/>
-          
+          <Route path="/admin/product/new" element={<AddNewProduct/>}/>
+          <Route path="/admin/dashboard" element={<Dashboard/>}/>
           {/* <Route path="/contact" element={<ContactUs/>}/> */}
           <Route path="/login" element={<Login/>}/>
           <Route path="/register" element={<Register/>}/>
@@ -49,7 +52,7 @@ function App() {
           <Route exact path="/product/:id" element={<ProductDetails/>}/>
           <Route path="/search" element={<Search/>}/>
           <Route path="/cart" element={currentUser ? <Shoppingcart/> : <Navigate to='/login'/>}/>
-         
+          <Route path="/chatbot" element={<Chatbot/>}/>
         </Routes>
           
       </div>

@@ -1,10 +1,17 @@
 import React from "react";
 //import{Link} from "react-router-dom"
 import { useSelector, useDispatch } from "react-redux"
+import { removeItemsFromCart } from "../../actions/cartAction";
 export function Shoppingcart() {
 
     const dispatch = useDispatch();
     const { cartItems } = useSelector((state) => state.cart);
+
+    const deleteCartItems = (id) => {
+        dispatch(removeItemsFromCart(id));
+      };
+    
+
     return (
         <body>
 
@@ -25,25 +32,20 @@ export function Shoppingcart() {
                             <>
                             <td>{item.name}</td>
                             <td>1 <a ></a></td>
-                            <td>{item.price}</td>
-                            
+                            <td>₹{item.price}</td>
+                            <td><button className="removebuttonStyle" onClick= {()=>deleteCartItems(item.product)}  >Remove</button></td>
                             </>
                            
                         </tr> ))}
                         <tr>
-                            <th colspan="3"><span class="pull-right">Total</span></th>
-                            <th>£250.00</th>
+
+                            <th colspan="2">Total</th>
+                            <th>{`₹${cartItems.reduce((acc, item) => acc +item.price,0)}`}</th>
+                            
                         </tr>
-                                                {/* <tr>
-                                <th colspan="3"><span class="pull-right">VAT 20%</span></th>
-                                <th>£50.00</th>
-                            </tr> */}
-                                < tr >
-                            {/* <th colspan="3"><span class="pull-right">Total</span></th>
-                            <th>£300.00</th> */}
-                        </tr>
+                                    
                     <tr>
-                        <td><a href="#" class="btn btn-primary">Continue Shopping</a></td>
+                        <td><a href="/products" class="btn btn-primary">Continue Shopping</a></td>
                         <td colspan="3"><a href="#" class="pull-right btn btn-success">Checkout</a></td>
                     </tr>
                 </tbody>

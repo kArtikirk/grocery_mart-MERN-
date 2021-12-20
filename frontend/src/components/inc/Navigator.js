@@ -1,30 +1,48 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
-import logo from '../images/logo.jpg'
-import Search from "../pages/Search";
+import { logout } from "../pages/firebase";
 import "../inc/Navigator.css"
 //import { Allproducts } from "../pages/allproducts";
 //import { ContactUs } from "../pages/ContactUs";
 import { Navigate } from "react-router";
-import { useAuth } from "../pages/firebase"; 
+import { useAuth } from "../pages/firebase";
 import { Shoppingcart } from "../pages/shoppingCart";
+
+
 export function Navigator() {
-    const currentUser= useAuth()
+
+    const [loading, setLoading] = useState(false);
+
+    const currentUser = useAuth()
+    async function handleLogout() {
+        setLoading(true);
+        try {
+            await logout();
+        } catch {
+            alert("Error!");
+        }
+        setLoading(false);
+    }
+
+
+
     return (
         <div class="fluid">
             <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-                <img src={logo} class=" logo-design" alt="Logo" />
+                <li class="Logostyle">GroceryMart</li>
+                {/* <img src={logo} class=" logo-design" alt="Logo" /> */}
                 <div class="container-fluid">
-                    
+
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
                             <li class="nav-item">
                                 <Link to='/' class="navbar-brand">Home</Link>
                             </li>
-                            
+
                             <li class="nav-item">
                                 <Link to='/about' class="nav-link active">About</Link>
                             </li>
@@ -53,35 +71,55 @@ export function Navigator() {
                                     </div>
                                 </div>
                             </div>
-                            <li class="nav-item">
-                                <Link to='/login' class="nav-link active">Login</Link>
-                            </li>
-                            <li class="nav-item">
-                                <Link to='/register' class="nav-link active">Register</Link>
-                            </li>
+
+
 
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Categories
                                 </a>
                                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                     <li><Link to='/fruits' class="dropdown-item">Fruits</Link></li>
                                     <li><Link to='/vegetables' class="dropdown-item">Vegetables</Link></li>
                                     <li><Link to='/spices' class="dropdown-item">Spices</Link></li>
-                                    <li><Link to='/others' class="dropdown-item">Others</Link></li>  
+                                    <li><Link to='/others' class="dropdown-item">Others</Link></li>
                                     <li className="dropdown-divider"> </li>
-                                    <li><Link to='/products' class="dropdown-item">All Products</Link></li> 
+                                    <li><Link to='/products' class="dropdown-item">All Products</Link></li>
                                 </ul>
+
                             </li>
 
 
 
+
+
                         </ul>
-                      
+
                         <aside>
-                            <Link to ="/cart" element={currentUser ? <Shoppingcart/> : <Navigate to='/login'/>}>Cart</Link>
+                            <ul>
+                                {currentUser ?
+                                    <>
+                                        <li class="asideelement" disabled={loading || !currentUser} onClick={handleLogout} type="submit" >Logout</li>
+
+                                    </>
+                                    :
+                                    <>
+                                        <li class="nav-item">
+                                            <Link to='/login' class="asideelement">Login</Link>
+                                        </li>
+                                        <li class="nav-item">
+                                            <Link to='/register' class="asideelement">Register</Link>
+                                        </li>
+                                    </>}
+
+                                    <li>
+                                        <Link to="/cart" class="asideelement" element={currentUser ? <Shoppingcart /> : <Navigate to='/login' />}>
+                                        <i class='fa fa-shopping-cart yellow-color'> Cart</i></Link>
+                                    </li> 
+                            </ul>
                         </aside>
-                        
+
+
 
                     </div>
                 </div>

@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default function Footer() {
     return (<>
         <div>
-           
                 <section className="footer">
                     <div className="span1">&copy; 2021 Company, Inc</div>
                     <div>
@@ -15,7 +14,10 @@ export default function Footer() {
                             <Link className='link' to='/'>Home</Link>
                         </li> */}
                         <li>
-                            <Link className='link' to='/contact'>Contact Us</Link>
+                            
+                            <Link  className='link' to='/chatbot'>
+                                ChatBot
+                            </Link>
                         </li>
                     </ul>
                     </div>

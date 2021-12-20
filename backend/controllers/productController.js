@@ -6,19 +6,17 @@ const ApiFeatures = require("../utils/apifeatures");
 
 
 //create product-- Admin
-exports.createProduct = async (req,res,next)=>{
+exports.createProduct = async (req,res)=>{
     // const resultPerPage= 10;
     // const productsCount= await Product.countDocuments() // line 17-productsCount
-    const products = await Product.create(req.body);
+    const product = await Product.create(req.body);
 
     res.status(201).json({
         success:true,
-        products,
+        product,
         
-    })
-    
+    }) 
 }
-
 
 //get all products
 exports.getAllProducts= async(req,res)=>{
@@ -45,7 +43,7 @@ exports.getProductDetails = async(req,res)=>{
     }
 
     res.status(200).json({
-        success:true,
+        success:true,   
         product
 
     })

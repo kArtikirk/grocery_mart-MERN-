@@ -1,5 +1,5 @@
 import React, { useRef, useState } from "react";
-import { login, logout, useAuth } from "./firebase";
+import { login, useAuth } from "./firebase";
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Form, Button, Row, Col } from "react-bootstrap";
 import '../inc/login.css'
@@ -24,19 +24,7 @@ export function Login() {
         setLoading(false);
     }
 
-    // function Logout() {
-    //     const [loading, setLoading] = useState(false);
-    //     const currentUser = useAuth();
-
-        async function handleLogout() {
-            setLoading(true);
-            try {
-                await logout();
-            } catch {
-                alert("Error!");
-            }
-            setLoading(false);
-        }
+    
     
 
         return (
@@ -60,7 +48,7 @@ export function Login() {
                             </Form.Group>
                             <br />
                             <Button disabled={loading || currentUser} onClick={handleLogin} type="submit" className="btn btn-block btn-lg btn-primary" >Login</Button>
-                            <Button id ="logoutbutton" disabled={loading || !currentUser} onClick={handleLogout} type="submit" className="btn btn-block btn-lg btn-primary" >logout</Button>
+                            
                         </Form>
                     </Col>
                 </Row>

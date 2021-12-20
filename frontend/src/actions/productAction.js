@@ -4,6 +4,10 @@ import {
     ALL_PRODUCT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
+    NEW_PRODUCT_REQUEST,
+    NEW_PRODUCT_SUCCESS,
+    NEW_PRODUCT_FAIL,
+    NEW_PRODUCT_RESET,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
     PRODUCT_DETAILS_FAIL,
@@ -29,6 +33,41 @@ export const getProduct =
     }
 };
 
+
+// creating products--admin
+
+export const createProduct = (productData) => async (dispatch) => {
+  console.log("Initial Data",productData)
+  try {
+    dispatch({ type: NEW_PRODUCT_REQUEST });
+
+    const config = {
+      headers: { "Content-Type": "application/json" },
+    };
+
+    const { data } = await axios.post(
+      `/api/v1/admin/product/new`,
+      productData,
+      
+      config ,
+      console.log("Product Data",productData),
+      
+    );
+    
+    dispatch({
+      type: NEW_PRODUCT_SUCCESS,  
+      payload: data,
+    });
+  } catch (error) {
+    dispatch({
+      type: NEW_PRODUCT_FAIL,
+      payload: error.response.data.message,
+    });
+
+  }
+  
+};
+
 export const getProductDetails = (id) => async (dispatch) => {
     try {
       dispatch({ type: PRODUCT_DETAILS_REQUEST });
@@ -48,9 +87,8 @@ export const getProductDetails = (id) => async (dispatch) => {
   };
 
 
+
+
 export const clearErrors = () => async (dispatch) =>{  //clearing errors
-dispatch({type:CLEAR_ERRORS})
-};
-
-
-
+  dispatch({type:CLEAR_ERRORS})
+  };

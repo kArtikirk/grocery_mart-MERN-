@@ -2,15 +2,15 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 
 import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
-import { productDetailsReducer, productReducer } from './reducers/productReducers';
+import { productDetailsReducer, productReducer,newProductReducer } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducer';
 import {addItemsToCart} from "./actions/cartAction"
 
 const reducer = combineReducers({
     products:productReducer,
-    cart:cartReducer,  //to add product to cart
-    productDetails:productDetailsReducer
-
+    newProduct:newProductReducer,
+    productDetails:productDetailsReducer,
+    cart:cartReducer  //to add product to cart
 });
 
 
