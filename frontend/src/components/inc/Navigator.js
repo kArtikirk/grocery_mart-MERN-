@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom"
 import { logout } from "../pages/firebase";
 import "../inc/Navigator.css"
-//import { Allproducts } from "../pages/allproducts";
-//import { ContactUs } from "../pages/ContactUs";
 import { Navigate } from "react-router";
 import { useAuth } from "../pages/firebase";
 import { Shoppingcart } from "../pages/shoppingCart";
@@ -27,35 +25,35 @@ export function Navigator() {
 
 
     return (
-        <div class="fluid">
-            <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
-                <li class="Logostyle">GroceryMart</li>
-                {/* <img src={logo} class=" logo-design" alt="Logo" /> */}
-                <div class="container-fluid">
+        <div className="fluid">
+            <nav className="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+                <li className="Logostyle">GroceryMart</li>
+                <div className="container-fluid">
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
+                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span className="navbar-toggler-icon"></span>
                     </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav me-auto mb-2 mb-lg-0">
 
-                            <li class="nav-item">
-                                <Link to='/' class="navbar-brand">Home</Link>
+                            <li className="nav-item">
+                                <Link to='/' className="navbar-brand">Home</Link>
                             </li>
 
-                            <li class="nav-item">
-                                <Link to='/about' class="nav-link active">About</Link>
+                            <li className="nav-item">
+                                <Link to='/about' className="nav-link active">About</Link>
                             </li>
-                            <li class="nav-item w-100" style={{ width: "auto" }}>
+                            <li className="nav-item w-100" style={{ width: "auto" }}>
 
-                                <Link to='/contact' class="nav-link active" data-bs-toggle="modal" data-bs-target="#ContactUs">Contact</Link>
+                                <Link to='/contact' className="nav-link active" data-bs-toggle="modal" data-bs-target="#ContactUs">Contact</Link>
                             </li>
-                            <div class="modal fade" id="ContactUs" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                    <div class="modal-content">
-                                        <div class="modal-body">
+                            <div className="modal fade" id="ContactUs" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div className="modal-dialog">
+                                    <div className="modal-content">
+                                        <div className="modal-body">
                                             <div className="modal-tytle-box">
-                                                <h5 class="modal-title-styling" id="exampleModalLabel">Contact Us</h5>
+                                                <h5 className="modal-title-styling" id="exampleModalLabel">Contact Us</h5>
                                             </div>
                                             <p>
 
@@ -74,17 +72,17 @@ export function Navigator() {
 
 
 
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <li className="nav-item dropdown">
+                                <a  className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     Categories
                                 </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><Link to='/fruits' class="dropdown-item">Fruits</Link></li>
-                                    <li><Link to='/vegetables' class="dropdown-item">Vegetables</Link></li>
-                                    <li><Link to='/spices' class="dropdown-item">Spices</Link></li>
-                                    <li><Link to='/others' class="dropdown-item">Others</Link></li>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><Link to='/fruits' className="dropdown-item">Fruits</Link></li>
+                                    <li><Link to='/vegetables' className="dropdown-item">Vegetables</Link></li>
+                                    <li><Link to='/spices' className="dropdown-item">Spices</Link></li>
+                                    <li><Link to='/others' className="dropdown-item">Others</Link></li>
                                     <li className="dropdown-divider"> </li>
-                                    <li><Link to='/products' class="dropdown-item">All Products</Link></li>
+                                    <li><Link to='/products' className="dropdown-item">All Products</Link></li>
                                 </ul>
 
                             </li>
@@ -99,23 +97,23 @@ export function Navigator() {
                             <ul>
                                 {currentUser ?
                                     <>
-                                        <li class="asideelement" disabled={loading || !currentUser} onClick={handleLogout} type="submit" >Logout</li>
+                                        <li className="asideelement" disabled={loading || !currentUser} onClick={handleLogout} type="submit" >Logout</li>
 
                                     </>
                                     :
                                     <>
-                                        <li class="nav-item">
-                                            <Link to='/login' class="asideelement">Login</Link>
+                                        <li className="nav-item">
+                                            <Link to='/login' className="asideelement">Login</Link>
                                         </li>
-                                        <li class="nav-item">
-                                            <Link to='/register' class="asideelement">Register</Link>
+                                        <li className="nav-item">
+                                            <Link to='/register' className="asideelement">Register</Link>
                                         </li>
                                     </>}
 
-                                    <li>
-                                        <Link to="/cart" class="asideelement" element={currentUser ? <Shoppingcart /> : <Navigate to='/login' />}>
-                                        <i class='fa fa-shopping-cart yellow-color'> Cart</i></Link>
-                                    </li> 
+                                <li>
+                                    <Link to="/cart" className="asideelement" element={currentUser ? <Shoppingcart /> : <Navigate to='/login' />}>
+                                        <i className='fa fa-shopping-cart yellow-color'> Cart</i></Link>
+                                </li>
                             </ul>
                         </aside>
 

@@ -16,7 +16,7 @@ form{
 }
 
 body{
-    background-image:url(../images/Register\ -\ Copy.png);     
-    
+    background-image:url(../images/Register\ -\ Copy.png) ;
+    background-size: cover;     
 }
  

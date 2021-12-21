@@ -6,8 +6,9 @@ import {
   
   import axios from "axios";
  
-//  const quantity=1// c  quantity  line no 10 getState
-  // Add to CartgetSatte
+
+  // Add to Cart get State
+
   export const addItemsToCart = (id) => async (dispatch,getState) => {
     const { data } = await axios.get(`/api/v1/product/${id}`);
   
@@ -17,7 +18,7 @@ import {
         product: data.product._id,
         name: data.product.name,
         price: data.product.price,
-        image: data.product.images[0].url,
+        image: data.product.images,
        
       },
     });

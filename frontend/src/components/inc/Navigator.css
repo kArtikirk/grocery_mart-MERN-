@@ -6,20 +6,7 @@
     height:100px;
     padding-left: 20px;
   
-  }/*
-  #navbarbg-img{
-
-    background-color:rgb(173, 171, 171);
   }
-
-  .link1{
-    text-decoration: none;
-    color: black;
-  }
-  #togglebutton{
-    background-color: black;
-
-  } */
   .modal-title-styling{
     color:rgb(40, 66, 2);
     text-align: center;
@@ -65,7 +52,8 @@
       #476098 83.333%, 
       #A7489B 83.333% ); 
     background-repeat: repeat;
-    /* -webkit-background-clip: text; */
+    
+    
     -webkit-text-fill-color: white; 
     font-weight:900;
     cursor: pointer;

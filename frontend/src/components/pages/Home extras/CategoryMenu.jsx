@@ -23,7 +23,7 @@ export default function CategoryMenu() {
                             <div className="card-body">
                                     <img src={Fruits} alt="Mangoes img" height= "150px" position="auto" />
                                     <br/>
-                                    <Link to="/fruits" class="card-title">Fruits </Link>
+                                    <Link to="/fruits" className="card-title">Fruits </Link>
                             </div>
                         </div>
                         
@@ -34,7 +34,7 @@ export default function CategoryMenu() {
                         <div className="card">
                             <div className="card-body">
                                     <img src={Vegetables} alt="Vegetables img" height= "150px" position="auto"/><br/>
-                                    <Link to="/vegetables" class="card-title">Vegetables</Link>
+                                    <Link to="/vegetables" className="card-title">Vegetables</Link>
                             </div>
                         </div>
                         
@@ -45,7 +45,7 @@ export default function CategoryMenu() {
                         <div className="card">
                             <div className="card-body">
                                 <img src={Spices} alt="Strawberries img" height= "150px" position="auto"/><br/>
-                                <Link to="/spices" class="card-title">Spices</Link>
+                                <Link to="/spices" className="card-title">Spices</Link>
                             </div>
                         </div>
                         
@@ -56,7 +56,7 @@ export default function CategoryMenu() {
                         <div className="card">
                             <div className="card-body">
                                     <img src={Pulses} alt="Apples img" height= "150px"  position="auto"/><br/>
-                                    <Link to="/others" class="card-title">Others</Link>
+                                    <Link to="/others" className="card-title">Others</Link>
                             </div>
                         </div>
                         

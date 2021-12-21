@@ -6,8 +6,6 @@
 
 }
 
-
-
 .row-col-sm-6{
 
     text-align: center;
@@ -21,25 +19,4 @@ div.card-body{
 #Products{
     align-items: center; 
     display: flex;
-    
-    /* display: inline-flex; */
-    /* margin-left: 200px; */
-    /* margin-left: 20px; */
-    /* margin-right: 20px;
-    margin-bottom: 40px;
-    /* justify-content: space-between; */
-    /* border: rgb(19, 1, 19) 2px solid;
-
-}
-.card-text1{
-    text-align: center;
-    color: brown;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    text-decoration: none;
-    
-}
-
-.btn-styling{
-    align-self: center;
-    /* margin-left: 4rem; */
 }

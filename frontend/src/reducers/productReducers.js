@@ -2,10 +2,12 @@ import {
     ALL_PRODUCT_FAIL,
     ALL_PRODUCT_REQUEST,
     ALL_PRODUCT_SUCCESS,
+
     NEW_PRODUCT_REQUEST,
     NEW_PRODUCT_SUCCESS,
     NEW_PRODUCT_FAIL,
     NEW_PRODUCT_RESET,
+
     PRODUCT_DETAILS_FAIL,
     PRODUCT_DETAILS_REQUEST,
     PRODUCT_DETAILS_SUCCESS,
@@ -22,9 +24,7 @@ export const productReducer = (state = { products: [] },action) => {
         case ALL_PRODUCT_SUCCESS:
             return {
                 loading: false,
-                products: action.payload.products    //product count is remaining
-                // productsCount:action.payload.productsCount,
-
+                products: action.payload.products    
             };
             case ALL_PRODUCT_FAIL:
             return {
@@ -46,7 +46,7 @@ export const productReducer = (state = { products: [] },action) => {
 // --------------------to create new Products---------------------
 
 export const newProductReducer = (state = { product: {} }, action) => {
-  console.log("state", state)
+  
   switch (action.type) {
     case NEW_PRODUCT_REQUEST:
       return {
@@ -97,7 +97,7 @@ export const productDetailsReducer = ((state = { product:{}}, action) => {
         case PRODUCT_DETAILS_SUCCESS:
             return {
                 loading: false,
-                product: action.payload,    //product count is remaining
+                product: action.payload,    
 
             };
             case PRODUCT_DETAILS_FAIL:

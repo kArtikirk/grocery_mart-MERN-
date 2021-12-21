@@ -4,13 +4,14 @@ import thunk from 'redux-thunk';
 import {composeWithDevTools} from 'redux-devtools-extension';
 import { productDetailsReducer, productReducer,newProductReducer } from './reducers/productReducers';
 import { cartReducer } from './reducers/cartReducer';
-import {addItemsToCart} from "./actions/cartAction"
+
 
 const reducer = combineReducers({
     products:productReducer,
-    newProduct:newProductReducer,
     productDetails:productDetailsReducer,
-    cart:cartReducer  //to add product to cart
+    cart:cartReducer, 
+    newProduct:newProductReducer,
+   
 });
 
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router-dom";
 import "../inc/search.css"
 
@@ -17,30 +17,18 @@ const Search = () => {
     return (
         <>
 
-        {/* <form class="d-flex"onSubmit={searchSubmitHandler}>
-        
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"  onChange={(e) => setKeyword(e.target.value)}  />
-                   
-                    <button class="btn btn-outline-success"  type="submit">Search
-            
-                </button> 
-        </form>
-        */}
-        <tr className="searchnbtnalign">
+            <tr className="searchnbtnalign">
 
-            <td >
+                <td >
 
-                <input className=" searchStyle" type="search" placeholder="Search" aria-label="Search" onChange={(e) => setKeyword(e.target.value)} /></td>
+                    <input className=" searchStyle" type="search" placeholder="Search" aria-label="Search" 
+                    onChange={(e) => setKeyword(e.target.value)} /></td>
 
+                <td >
+                    <button className="searchbutnstyling" onClick={searchSubmitHandler} type="submit">Search</button>
+                </td>
 
-
-            <td >
-
-                <button className="searchbutnstyling" onClick={searchSubmitHandler} type="submit">Search</button></td>
-
-
-
-        </tr>
+            </tr>
         </>
     );
 

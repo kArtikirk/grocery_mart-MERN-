@@ -1,8 +1,9 @@
 .home{
     flex: 4;
+    background-color:white ;
+    opacity: 0.8;
 }
 
 .homeWidgets{
     display: flex;
-    margin: 20px;
 }

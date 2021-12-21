@@ -15,44 +15,54 @@ export function Login() {
 
     async function handleLogin() {
         setLoading(true);
-        try {
-            await login(emailRef.current.value, passwordRef.current.value);
-            window.location.href="/"
-        } catch {
-            alert("Password or email is incorrect");
+        if (emailRef.current.value === "admin@gmail.com") {
+            try {
+                await login(emailRef.current.value, passwordRef.current.value);
+                window.location.href = "/admin/dashboard";
+            } catch {
+                alert("Password or email is incorrect");
+            }
+        } else {
+            try {
+                await login(emailRef.current.value, passwordRef.current.value);
+
+                window.location.href = "/";
+            } catch {
+                alert("Password or email is incorrect");
+            }
         }
         setLoading(false);
     }
 
-    
-    
 
-        return (
 
-            <Container id="col" >
-                
-                <Row>
-                    <Col lg={5} md={6} sm={12} className="p-5 m-auto rounded lg">
-                        
-                        <Form id="Forml" className="rounded p-4 p-sm-3 " >
+
+    return (
+
+        <Container id="col" >
+
+            <Row>
+                <Col lg={5} md={6} sm={12} className="p-5 m-auto rounded lg">
+
+                    <Form id="Forml" className="rounded p-4 p-sm-3 " >
                         <h1 id="headerL" >Login</h1>
-                            <Form.Group className="mb3">
-                                <Form.Label>Email Address</Form.Label>
-                                <Form.Control type="email" placeholder="Enter your email"
-                                    ref={emailRef} />
-                            </Form.Group >
-                            <Form.Group>
-                                <Form.Label>Password</Form.Label>
-                                <Form.Control type="password" placeholder="Enter your password"
-                                    ref={passwordRef} />
-                            </Form.Group>
-                            <br />
-                            <Button disabled={loading || currentUser} onClick={handleLogin} type="submit" className="btn btn-block btn-lg btn-primary" >Login</Button>
-                            
-                        </Form>
-                    </Col>
-                </Row>
-            </Container>
-        );
-    }
+                        <Form.Group className="mb3">
+                            <Form.Label>Email Address</Form.Label>
+                            <Form.Control type="email" placeholder="Enter your email"
+                                ref={emailRef} />
+                        </Form.Group >
+                        <Form.Group>
+                            <Form.Label>Password</Form.Label>
+                            <Form.Control type="password" placeholder="Enter your password"
+                                ref={passwordRef} />
+                        </Form.Group>
+                        <br />
+                        <Button disabled={loading || currentUser} onClick={handleLogin} type="submit" className="btn btn-block btn-lg btn-primary" >Login</Button>
+
+                    </Form>
+                </Col>
+            </Row>
+        </Container>
+    );
+}
 

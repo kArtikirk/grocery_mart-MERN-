@@ -5,7 +5,7 @@ h1{
     text-align: center;
 }
 .container1{
-    /* border: 2px solid red; */
+  
     margin: 10px;
 
     margin-top: 50px;
@@ -36,7 +36,6 @@ h1{
 }
 .footer{
     top: 90%;
-    /* position: fixed; */
     justify-content: space-between;
     height:auto;
     display: flex;
@@ -81,7 +80,7 @@ li{
    width: 80%;
 }
 
-/* cat1 */
+
 
 .row-col-sm-6{
 
@@ -97,14 +96,10 @@ div.card-body{
     display: flex;
     width: auto;
     height: auto;
-    /* display: inline-flex; */
-    /* margin-left: 200px; */
     margin-left: 20px;
     margin-right: 20px;
     margin-bottom: 40px;
     justify-content: space-between;
-    /* border: violet 2px solid; */
-
 }
 img{
     margin-bottom: 20px;

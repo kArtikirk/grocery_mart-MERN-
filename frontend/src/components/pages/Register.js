@@ -16,35 +16,36 @@ export function Register() {
     async function handleRegister() {
         setLoading(true);
         try {
-        await register(emailRef.current.value, passwordRef.current.value);
-        window.location.href="/"
+            await register(emailRef.current.value, passwordRef.current.value);
+            window.location.href = "/"
         } catch {
-        alert("Error! User already exists");
+            alert("Error! User already exists");
         }
         setLoading(false);
     }
 
     return (
-      
+
         <Container id="col">
-            
+
             <Row>
-                
+
                 <Col lg={5} md={6} sm={12} className="p-5 m-auto rounded lg">
                     <Form id="Forml" className="rounded p-4 p-sm-3" >
-                    <h1 id="headerR" >Register User</h1>
+                        <h1 id="headerR" >Register User</h1>
                         <Form.Group className="mb3">
-                            <Form.Label>Email Address</Form.Label>
+                            <Form.Label><b>Email Address : </b></Form.Label>
                             <Form.Control type="email" placeholder="Enter your email"
                                 ref={emailRef} required />
                         </Form.Group >
                         <Form.Group>
-                            <Form.Label>Password</Form.Label>
+                            <Form.Label><b>Password :</b> <i>( Password should not contain any special characters
+                                and length must be greater than 6 )</i></Form.Label>
                             <Form.Control type="password" placeholder="Enter your password"
-                                ref={passwordRef}  required/>
+                                ref={passwordRef} required />
                         </Form.Group>
                         <br />
-                        <Button disabled={loading || currentUser} onClick={handleRegister}  type="submit" className="btn btn-block btn-lg btn-primary" >Register</Button>
+                        <Button disabled={loading || currentUser} onClick={handleRegister} type="submit" className="btn btn-block btn-lg btn-primary" >Register</Button>
                     </Form>
                 </Col>
             </Row>
